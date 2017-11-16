@@ -24,6 +24,7 @@ public class ViewProduto extends javax.swing.JFrame {
 
     boolean editing;
     private GenericTableModel gtmProduto;
+    
 
     public ViewProduto() {
         initComponents();
