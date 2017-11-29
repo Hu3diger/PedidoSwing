@@ -1,13 +1,25 @@
 package Model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
 /**
  *
  * @author martin_ruediger
  */
-public class Ped_Prod {
+@Entity
+public class Ped_Prod implements IEntity{
+    private static final long serialVersionUID = 1L;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @ManyToOne
     private Pedido pedido;
+    @ManyToOne
     private Produto produto;
     private double preco_item;
     private double quantidade;
@@ -31,10 +43,12 @@ public class Ped_Prod {
         this.quantidade = quantidade;
     }
 
+    @Override
     public int getId() {
         return id;
     }
 
+    @Override
     public void setId(int id) {
         this.id = id;
     }

@@ -10,31 +10,33 @@ import java.util.List;
  */
 public class ClienteBusiness {
 
+    private static ClienteDAO clidao = new ClienteDAO();
+    
     public static Cliente findById(int id) {
-        return ClienteDAO.findById(id);
+        return clidao.findById(id);
     }
     
     public static List<Cliente> findActive(){
-        return ClienteDAO.findActive();
+        return clidao.findActive();
     }
     public static Cliente findById(Cliente cliente) {
         return findById(cliente.getId());
     }
 
     public static List<Cliente> findAll() {
-        return ClienteDAO.findAll();
+        return clidao.findAll();
     }
     
     public static void create(Cliente cliente) {
-        ClienteDAO.create(cliente);
+        clidao.save(cliente);
     }
 
     public static void update(Cliente cliente) {
-        ClienteDAO.update(cliente);
+        clidao.save(cliente);
     }
     
-    public static void desable(Cliente cliente) {
-        ClienteDAO.desable(cliente);
+    public static void changeStatus(Cliente cliente) {
+        clidao.changeStatus(cliente);
     }
     
     

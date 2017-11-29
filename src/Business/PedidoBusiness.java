@@ -11,8 +11,10 @@ import java.util.List;
  */
 public class PedidoBusiness {
 
+    private static PedidoDAO pedidodao = new PedidoDAO();
+    
     public static Pedido findById(int id){
-        return PedidoDAO.findById(id);
+        return pedidodao.findById(id);
     }
     
     public static Pedido findById(Pedido pedido) {
@@ -20,18 +22,19 @@ public class PedidoBusiness {
     }
 
     public static List<Pedido> findAll() {
-        return PedidoDAO.findAll();
+        return pedidodao.findAll();
     }
     
     public static Pedido create(Pedido pedido) {
-        return PedidoDAO.create(pedido);
+        pedidodao.save(pedido);
+        return pedido;
     }
 
     public static void update(Pedido pedido) {
-        PedidoDAO.update(pedido);
+        pedidodao.save(pedido);
     }
     
-    public static void desable(Pedido pedido){
-        PedidoDAO.desable(pedido);
+    public static void changeStatus(Pedido pedido){
+        pedidodao.changeStatus(pedido);
     }
 }

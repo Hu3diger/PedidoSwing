@@ -215,7 +215,7 @@ public class ViewCliente extends javax.swing.JFrame {
                 ClienteBusiness.update(cliente);
                 if (cliente2.isStatus() == true && estado.getSelectedIndex() == 0 || cliente2.isStatus() == false && estado.getSelectedIndex() == 1) {
                 } else if (cliente2.isStatus() == true && estado.getSelectedIndex() == 1 || cliente2.isStatus() == false && estado.getSelectedIndex() == 0) {
-                    ClienteBusiness.desable((Cliente) gtmCliente.getObjectList().get(TablesCliente.convertRowIndexToModel(TablesCliente.getSelectedRow())));
+                    ClienteBusiness.changeStatus((Cliente) gtmCliente.getObjectList().get(TablesCliente.convertRowIndexToModel(TablesCliente.getSelectedRow())));
                 }
                 gtmCliente.setObjectList(ClienteBusiness.findAll());
                 gtmCliente.fireTableDataChanged();

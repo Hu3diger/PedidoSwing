@@ -13,8 +13,10 @@ import java.util.List;
  */
 public class ProdutoBusiness {
 
+    private static ProdutoDAO produtoDao = new ProdutoDAO();
+    
     public static Produto findById(int id){
-        return ProdutoDAO.findById(id);
+        return produtoDao.findById(id);
     }
     
     public static Produto findById(Produto produto) {
@@ -22,23 +24,23 @@ public class ProdutoBusiness {
     }
 
     public static List<Produto> findAll() {
-        return ProdutoDAO.findAll();
+        return produtoDao.findAll();
     }
     
     public static List<Produto> findActive() {
-        return ProdutoDAO.findActive();
+        return produtoDao.findActive();
     }
     
     public static void create(Produto produto) {
-        ProdutoDAO.create(produto);
+        produtoDao.save(produto);
     }
 
     public static void update(Produto produto) {
-        ProdutoDAO.update(produto);
+        produtoDao.save(produto);
     }
     
     public static void desable(Produto produto) {
-        ProdutoDAO.desable(produto);
+        produtoDao.changeStatus(produto);
     }
     
 }

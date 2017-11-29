@@ -192,7 +192,7 @@ public class ViewPedido extends javax.swing.JFrame {
 
     private void btnRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveActionPerformed
         Pedido pedido = (Pedido) gtmPedido.getObjectList().get(tablePedido.convertRowIndexToModel(tablePedido.getSelectedRow()));
-        PedidoBusiness.desable(pedido);
+        PedidoBusiness.changeStatus(pedido);
         gtmPedido.fireTableDataChanged();
         gtmPedido.setObjectList(PedidoBusiness.findAll());
         status.setEnabled(false);
@@ -263,6 +263,7 @@ public class ViewPedido extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(ViewPedido.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

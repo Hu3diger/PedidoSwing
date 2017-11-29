@@ -13,8 +13,10 @@ import java.util.List;
  */
 public class Ped_ProdBusiness {
     
+    private static ped_prodDAO ppdao = new ped_prodDAO();
+    
     public static Ped_Prod findById(int id) {
-        return ped_prodDAO.findById(id);
+        return ppdao.findById(id);
     }
     
     public static Ped_Prod findById(Ped_Prod pedzin) {
@@ -22,15 +24,15 @@ public class Ped_ProdBusiness {
     }
     
     public static List<Ped_Prod> findByPedido(Pedido pedido) {
-        return ped_prodDAO.findByPedido(pedido);
+        return ppdao.findByPedido(pedido);
     }
 
     public static List<Ped_Prod> findAll() {
-        return ped_prodDAO.findAll();
+        return ppdao.findAll();
     }
     
     public static void create(Ped_Prod pedzao) {
-        ped_prodDAO.create(pedzao);
+        ppdao.save(pedzao);
     }
 
     
